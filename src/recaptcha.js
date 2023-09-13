@@ -36,12 +36,12 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   execute() {
-    const execute = this.getCaptchaFunction("execute");
-    if (execute && this._widgetId !== undefined) {
-      return execute(this._widgetId, {action: "login"});
-    } else {
-      this._executeRequested = true;
-    }
+    // const execute = this.getCaptchaFunction("execute");
+    // if (execute && this._widgetId !== undefined) {
+    //   return execute(this._widgetId, {action: "login"});
+    // } else {
+    //   this._executeRequested = true;
+    // }
   }
 
   executeAsync() {
