@@ -36,12 +36,12 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   execute() {
-    // const execute = this.getCaptchaFunction("execute");
-    // if (execute && this._widgetId !== undefined) {
-    //   return execute(this._widgetId, {action: "login"});
-    // } else {
-    //   this._executeRequested = true;
-    // }
+    const execute = this.getCaptchaFunction("execute");
+    if (execute && this._widgetId !== undefined) {
+      return execute(this._widgetId, {action: this.props.action});
+    } else {
+      this._executeRequested = true;
+    }
   }
 
   executeAsync() {
@@ -113,6 +113,7 @@ export default class ReCAPTCHA extends React.Component {
         hl: this.props.hl,
         badge: this.props.badge,
         isolated: this.props.isolated,
+        action: this.props.action,
       });
       this.captcha.appendChild(wrapper);
     }
@@ -151,6 +152,7 @@ export default class ReCAPTCHA extends React.Component {
       badge,
       hl,
       isolated,
+      action,
       ...childProps
     } = this.props;
     /* eslint-enable no-unused-vars */
@@ -173,6 +175,7 @@ ReCAPTCHA.propTypes = {
   hl: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
   isolated: PropTypes.bool,
+  action: PropsTypes.string.isRequired,
 };
 ReCAPTCHA.defaultProps = {
   onChange: () => {},
@@ -181,4 +184,5 @@ ReCAPTCHA.defaultProps = {
   tabindex: 0,
   size: "normal",
   badge: "bottomright",
+  action: "",
 };
