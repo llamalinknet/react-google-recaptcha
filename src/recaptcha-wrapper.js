@@ -14,7 +14,10 @@ function getURL() {
   if (dynamicOptions.enterprise) {
     return `https://${hostname}/recaptcha/enterprise.js?onload=${callbackName}&render=explicit`;
   }
-  return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit`;
+  else
+  {
+    return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit`;
+  }
 }
 
 export default makeAsyncScriptLoader(getURL, {

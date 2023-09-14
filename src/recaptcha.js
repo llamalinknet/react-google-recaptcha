@@ -15,7 +15,10 @@ export default class ReCAPTCHA extends React.Component {
       if (this.props.grecaptcha.enterprise) {
         return this.props.grecaptcha.enterprise[fnName];
       }
-      return this.props.grecaptcha[fnName];
+      else
+      {
+        return this.props.grecaptcha[fnName];
+      }
     }
     return null;
   }
