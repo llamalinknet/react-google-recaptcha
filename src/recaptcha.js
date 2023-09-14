@@ -175,7 +175,7 @@ ReCAPTCHA.propTypes = {
   hl: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
   isolated: PropTypes.bool,
-  action: PropsTypes.string.isRequired,
+  action: PropTypes.string.isRequired,
 };
 ReCAPTCHA.defaultProps = {
   onChange: () => {},
